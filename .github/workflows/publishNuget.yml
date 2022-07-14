@@ -1,0 +1,17 @@
+name: Publish NuGet
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Publish NuGet
+      uses: brandedoutcast/publish-nuget@v2.5.5
