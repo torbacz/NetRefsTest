@@ -1,8 +1,8 @@
 using System.Xml.Serialization;
 
-namespace NetRefsTest.Models;
+namespace NetProjTest.Models;
 
-public class AdditionalFiles
+public class AdditionalFile
 {
     [XmlAttribute("Include")]
     public string Include { get; set; }

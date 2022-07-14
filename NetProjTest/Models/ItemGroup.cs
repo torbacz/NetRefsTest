@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace NetRefsTest.Models;
+namespace NetProjTest.Models;
 
 public class ItemGroup
 {
@@ -8,5 +8,5 @@ public class ItemGroup
     public List<PackageReference> PackageReferences { get; set; }
         
     [XmlElement("AdditionalFiles")]
-    public List<AdditionalFiles> AdditionalFiless { get; set; }
+    public List<AdditionalFile> AdditionalFiless { get; set; }
 }

@@ -1,7 +1,6 @@
-using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
 
-namespace NetRefsTest.Models;
+namespace NetProjTest.Models;
 
 public class PropertyGroup
 {
@@ -16,32 +15,32 @@ public class PropertyGroup
     private readonly Lazy<TargetFramework?> targetFramework;
     
     [XmlElement("TargetFramework")]
-    public string TargetFrameworkRaw { get; set; }
+    public string? TargetFrameworkRaw { get; set; }
     public TargetFramework? TargetFramework => targetFramework.Value;
     
     [XmlElement("ImplicitUsings")]
-    public string ImplicitUsingsRaw { get; set; }
+    public string? ImplicitUsingsRaw { get; set; }
     public bool ImplicitUsings => implicitUsings.Value;
     
     [XmlElement("Nullable")]
-    public string Nullable { get; set; }
+    public string? Nullable { get; set; }
     
     [XmlElement("IsPackable")]
-    public string IsPackableRaw { get; set; }
+    public string? IsPackableRaw { get; set; }
     public bool IsPackable => isPackable.Value;
     
     [XmlElement("TreatWarningsAsErrors")]
-    public string TreatWarningsAsErrorsRaw { get; set; }
+    public string? TreatWarningsAsErrorsRaw { get; set; }
     public bool TreatWarningsAsErrors => treatWarningsAsErrors.Value;
     
     [XmlElement("GenerateDocumentationFile")]
-    public string GenerateDocumentationFileRaw { get; set; }
+    public string? GenerateDocumentationFileRaw { get; set; }
     public bool GenerateDocumentationFile => generateDocumentationFile.Value;
     
     [XmlAttribute("Condition")]
-    public string Condition { get; set; }
+    public string? Condition { get; set; }
     [XmlElement("CheckForOverflowUnderflow")]
-    public string CheckForOverflowUnderflowRaw { get; set; }
+    public string? CheckForOverflowUnderflowRaw { get; set; }
 
     public bool CheckForOverflowUnderflow => checkForOverflowUnderflow.Value;
 
@@ -55,7 +54,7 @@ public class PropertyGroup
         targetFramework = new Lazy<TargetFramework?>(()=> TargetFrameworkFromRawString(TargetFrameworkRaw));
     }
 
-    private static bool ParseFromString(string value, string valueTrue)
+    private static bool ParseFromString(string? value, string valueTrue)
     {
         if (string.IsNullOrWhiteSpace(value))
             return false;
@@ -63,7 +62,7 @@ public class PropertyGroup
         return value.Equals(valueTrue, StringComparison.OrdinalIgnoreCase);
     }
 
-    private static TargetFramework? TargetFrameworkFromRawString(string value)
+    private static TargetFramework? TargetFrameworkFromRawString(string? value)
     {
         if (string.IsNullOrWhiteSpace(value))
             return null;

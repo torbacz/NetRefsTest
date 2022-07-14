@@ -1,6 +1,6 @@
-using NetRefsTest.Models;
+using NetProjTest.Models;
 
-namespace NetRefsTest.Unit.Tests;
+namespace NetProjTest.Unit.Tests;
 
 public class ProjectSerializationTests
 {
@@ -73,7 +73,7 @@ public class ProjectSerializationTests
     [Fact]
     public void Project_Should_SerializeSuccessfullyFromFile()
     {
-        const string path = "../../../NetRefsTest.Unit.Tests.csproj";
+        const string path = "../../../NetProjTest.Unit.Tests.csproj";
 
         var project = Project.FromFile(path);
 

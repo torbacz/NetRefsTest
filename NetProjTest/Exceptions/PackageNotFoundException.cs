@@ -1,4 +1,4 @@
-﻿namespace NetRefsTest.Exceptions;
+﻿namespace NetProjTest.Exceptions;
 
 public sealed class PackageNotFoundException : Exception
 {

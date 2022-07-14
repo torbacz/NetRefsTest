@@ -1,4 +1,4 @@
-﻿namespace NetRefsTest.Unit.Tests;
+﻿namespace NetProjTest.Unit.Tests;
 
 public class ProjectSamples
 {

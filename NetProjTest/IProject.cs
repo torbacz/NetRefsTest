@@ -1,6 +1,6 @@
-using NetRefsTest.Models;
+using NetProjTest.Models;
 
-namespace NetRefsTest;
+namespace NetProjTest;
 
 public interface IProject
 {
@@ -19,4 +19,6 @@ public interface IProject
     
     public IProject ShouldNotContainPackage(string packageName);
     public IProject ShouldNotContainPackage(string packageName, string version);
+    public IProject ShouldContainAdditionalFile(string fileName);
+    public IProject ShouldContainAdditionalFile(string fileName, string link);
 }

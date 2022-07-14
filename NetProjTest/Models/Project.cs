@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace NetRefsTest.Models;
+namespace NetProjTest.Models;
 
 public class Project
 {

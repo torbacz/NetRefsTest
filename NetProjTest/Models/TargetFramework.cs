@@ -1,4 +1,4 @@
-﻿namespace NetRefsTest.Models;
+﻿namespace NetProjTest.Models;
 
 public enum TargetFramework
 {

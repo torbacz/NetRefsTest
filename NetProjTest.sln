@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetRefsTest", "NetRefsTest\NetRefsTest.csproj", "{99D5E0C1-5553-4447-815A-BE72F26B6042}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetProjTest", "NetProjTest\NetProjTest.csproj", "{99D5E0C1-5553-4447-815A-BE72F26B6042}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D4F546B5-0A12-4718-AAE4-4136D9ED88F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetRefsTest.Unit.Tests", "NetRefsTest.Unit.Tests\NetRefsTest.Unit.Tests.csproj", "{CE56D009-8548-4E31-B46A-B001A1FE77BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetProjTest.Unit.Tests", "NetProjTest.Unit.Tests\NetProjTest.Unit.Tests.csproj", "{CE56D009-8548-4E31-B46A-B001A1FE77BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

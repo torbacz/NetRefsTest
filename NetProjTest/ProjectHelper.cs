@@ -1,6 +1,6 @@
-﻿using NetRefsTest.Models;
+﻿using NetProjTest.Models;
 
-namespace NetRefsTest;
+namespace NetProjTest;
 
 public class ProjectHelper
 {
