@@ -25,5 +25,4 @@
     <ItemGroup>
       <ProjectReference Include="..\NetProjTest\NetProjTest.csproj" />
     </ItemGroup>
-
 </Project>

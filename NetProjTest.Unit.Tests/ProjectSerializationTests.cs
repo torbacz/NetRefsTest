@@ -1,4 +1,5 @@
 using NetProjTest.Models;
+using NetProjTest.Models.Net60;
 
 namespace NetProjTest.Unit.Tests;
 
@@ -8,7 +9,7 @@ public class ProjectSerializationTests
     public void Project_Should_SerializeSuccessfullyFromString()
     {
         var projectName = "testProject";
-        var project = Project.FromXmlString(ProjectSamples.testProjectNet60_1, projectName);
+        var project = Net60Project.FromXmlString(ProjectSamples.testProjectNet60_1, projectName);
 
         project.ProjectName.Should().Be(projectName);
         project.Sdk.Should().Be("Microsoft.NET.Sdk");
@@ -75,7 +76,7 @@ public class ProjectSerializationTests
     {
         const string path = "../../../NetProjTest.Unit.Tests.csproj";
 
-        var project = Project.FromFile(path);
+        var project = Net60Project.FromFile(path);
 
         project.Should().NotBeNull();
     }

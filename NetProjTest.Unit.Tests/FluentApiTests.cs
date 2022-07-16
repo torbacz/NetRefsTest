@@ -19,8 +19,8 @@ public class FluentApiTests : IDisposable
         var project = IProject.FromFile(sampleProjectPath);
 
         FluentActions.Invoking(() => project
-            .ShouldContainPackage("StyleCop.Analyzers")
-            .ShouldContainPackage("StyleCop.Analyzers", "1.2.0-beta.435")).Should().NotThrow();
+            .Should().ContainPackage("StyleCop.Analyzers")
+            .Should().ContainPackage("StyleCop.Analyzers", "1.2.0-beta.435")).Should().NotThrow();
     }
 
     [Fact]
@@ -28,7 +28,7 @@ public class FluentApiTests : IDisposable
     {
         var project = IProject.FromFile(sampleProjectPath);
 
-        FluentActions.Invoking(() => project.ShouldContainPackage("StyleCop.Analyzers1")).Should()
+        FluentActions.Invoking(() => project.Should().ContainPackage("StyleCop.Analyzers1")).Should()
             .ThrowExactly<PackageNotFoundException>().And.Message.Should()
             .ContainAll(sampleProjectName, "StyleCop.Analyzers1");
     }
@@ -38,7 +38,7 @@ public class FluentApiTests : IDisposable
     {
         var project = IProject.FromFile(sampleProjectPath);
 
-        FluentActions.Invoking(() => project.ShouldContainPackage("StyleCop.Analyzers", "1.2.0-beta.430")).Should()
+        FluentActions.Invoking(() => project.Should().ContainPackage("StyleCop.Analyzers", "1.2.0-beta.430")).Should()
             .ThrowExactly<PackageNotFoundException>().And.Message.Should()
             .ContainAll(sampleProjectName, "StyleCop.Analyzers", "1.2.0-beta.430");
     }
@@ -49,8 +49,8 @@ public class FluentApiTests : IDisposable
         var project = IProject.FromFile(sampleProjectPath);
 
         FluentActions.Invoking(() => project
-            .ShouldNotContainPackage("StyleCop.Analyzers1")
-            .ShouldNotContainPackage("StyleCop.Analyzers", "1.2.0-beta.430")
+            .Should().Not().NotContainPackage("StyleCop.Analyzers1")
+            .Should().Not().NotContainPackage("StyleCop.Analyzers", "1.2.0-beta.430")
         ).Should().NotThrow();
     }
 
@@ -59,7 +59,7 @@ public class FluentApiTests : IDisposable
     {
         var project = IProject.FromFile(sampleProjectPath);
 
-        FluentActions.Invoking(() => project.ShouldNotContainPackage("StyleCop.Analyzers")).Should()
+        FluentActions.Invoking(() => project.Should().Not().NotContainPackage("StyleCop.Analyzers")).Should()
             .ThrowExactly<PackageFoundException>().And.Message.Should()
             .ContainAll(sampleProjectName, "StyleCop.Analyzers");
     }
@@ -69,7 +69,7 @@ public class FluentApiTests : IDisposable
     {
         var project = IProject.FromFile(sampleProjectPath);
 
-        FluentActions.Invoking(() => project.ShouldNotContainPackage("StyleCop.Analyzers", "1.2.0-beta.435")).Should()
+        FluentActions.Invoking(() => project.Should().Not().NotContainPackage("StyleCop.Analyzers", "1.2.0-beta.435")).Should()
             .ThrowExactly<PackageFoundException>().And.Message.Should()
             .ContainAll(sampleProjectName, "StyleCop.Analyzers", "1.2.0-beta.435");
     }
@@ -79,7 +79,7 @@ public class FluentApiTests : IDisposable
     {
         var project = IProject.FromFile(sampleProjectPath);
 
-        FluentActions.Invoking(() => project.ShouldContainAdditionalFile("..\\stylecop.json")).Should()
+        FluentActions.Invoking(() => project.Should().ContainFile("stylecop.json", "..\\stylecop.json")).Should()
             .NotThrow();
     }
 

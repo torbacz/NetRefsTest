@@ -1,7 +1,9 @@
+using System.ComponentModel;
 using System.Xml.Serialization;
 
-namespace NetProjTest.Models;
+namespace NetProjTest.Models.Net60;
 
+[Browsable(false)]
 public class PropertyGroup
 {
     private const string TrueValue = "True";
@@ -69,7 +71,7 @@ public class PropertyGroup
         
         return value switch
         {
-            "net6.0" => Models.TargetFramework.Net60,
+            "net6.0" => Net60.TargetFramework.Net60,
             _ => throw new NotSupportedException($"Value {value} is not supported")
         };
     }

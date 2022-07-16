@@ -1,4 +1,6 @@
+using NetProjTest.FluentInterfaces;
 using NetProjTest.Models;
+using NetProjTest.Models.Net60;
 
 namespace NetProjTest;
 
@@ -7,18 +9,15 @@ public interface IProject
     public static IProject FromFile(string filePath)
     {
         var frameworkVersion = ProjectHelper.FindTargetFrameworkBasedOnFile(filePath);
-        return frameworkVersion switch
+        var projectModel = frameworkVersion switch
         {
-            TargetFramework.Net60 => new ProjectNet(Project.FromFile(filePath)),
+            TargetFramework.Net60 => Project.FromNet60Project(Net60Project.FromFile(filePath)),
             _ => throw new ArgumentOutOfRangeException($"")
         };
+
+        return new ProjectTester(projectModel);
     }
 
-    public IProject ShouldContainPackage(string packageName);
-    public IProject ShouldContainPackage(string packageName, string version);
-    
-    public IProject ShouldNotContainPackage(string packageName);
-    public IProject ShouldNotContainPackage(string packageName, string version);
-    public IProject ShouldContainAdditionalFile(string fileName);
-    public IProject ShouldContainAdditionalFile(string fileName, string link);
+    public IShould Should();
+
 }

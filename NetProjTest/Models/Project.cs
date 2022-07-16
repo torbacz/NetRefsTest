@@ -1,42 +1,40 @@
-﻿using System.Xml.Serialization;
+﻿using NetProjTest.Models.Net60;
 
 namespace NetProjTest.Models;
 
 public class Project
 {
-    public string ProjectName { get; set; }
-    [XmlAttribute("Sdk")]
-    public string Sdk { get; set; }
-    [XmlElement("PropertyGroup")]
-    public List<PropertyGroup> PropertyGroups { get; set; }
-    [XmlElement("ItemGroup")]
-    public List<ItemGroup> ItemGroups { get; set; }
-    
-    
-    public static Project FromXmlString(string xml, string projectName)
+    private Project(string projectName, TargetFramework targetFramework, IReadOnlyList<Package> packages, IReadOnlyList<File> files)
     {
-        if (string.IsNullOrWhiteSpace(xml))
-            throw new ArgumentException("Value cannot be null or whitespace.", nameof(xml));
-        
-        if (string.IsNullOrWhiteSpace(projectName))
-            throw new ArgumentException("Value cannot be null or whitespace.", nameof(projectName));
-
-        var serializer = new XmlSerializer(typeof(Project));
-        using TextReader reader = new StringReader(xml);
-        
-        var obj = serializer.Deserialize(reader) as Project;
-        if (obj == null) 
-            throw new ArgumentNullException(nameof(obj));
-
-        obj.ProjectName = projectName;
-        return obj;
+        ProjectName = projectName;
+        TargetFramework = targetFramework;
+        Packages = packages;
+        Files = files;
     }
 
-    
-    public static Project FromFile(string fullFilePath)
+    public string ProjectName { get; }
+    public TargetFramework TargetFramework { get; }
+    public IReadOnlyList<Package> Packages { get; }
+    public IReadOnlyList<File> Files { get; }
+
+    internal static Project FromNet60Project(Net60Project project)
     {
-        var projectXml = File.ReadAllText(fullFilePath);
-        var projectName = Path.GetFileNameWithoutExtension(fullFilePath);
-        return FromXmlString(projectXml, projectName);
+        if (project == null) 
+            throw new ArgumentNullException(nameof(project));
+        
+        if (string.IsNullOrEmpty(project.ProjectName)) 
+            throw new ArgumentNullException(nameof(project.ProjectName));
+
+        var packages = project.ItemGroups?.Where(x => x.PackageReferences != null).SelectMany(x =>
+                x.PackageReferences ?? throw new ArgumentNullException(nameof(x.PackageReferences)))
+            .Select(x => new Package(x.Include ?? string.Empty, x.Version ?? string.Empty)).ToList();
+
+        var files = project.ItemGroups?.Where(x => x.AdditionalFiless != null).SelectMany(x =>
+                x.AdditionalFiless ?? throw new ArgumentNullException(nameof(x.AdditionalFiless)))
+            .Select(x => new File() { FileName = x.Link ?? string.Empty, FilePath = x.Include ?? string.Empty })
+            .ToList();
+
+        return new Project(project.ProjectName, TargetFramework.Net60, packages ?? new List<Package>(),
+            files ?? new List<File>());
     }
 }
