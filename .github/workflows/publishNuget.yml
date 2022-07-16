@@ -30,7 +30,12 @@ jobs:
 
     - name: 'Build project'
       run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
-
+      
+    - uses: kzrnm/get-net-sdk-project-versions-action@v1
+      id: get-version
+      with:
+        proj-path: ${{ env.PROJECT_PATH }}
+        
     - name: 'Pack project'
       run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.get-version.outputs.package-version }}.${{ github.run_number }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
