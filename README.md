@@ -5,9 +5,9 @@ Inspired by Inspired by the [NetArchTest](https://github.com/BenMorris/NetArchTe
 
 # Supported .Net versions
 
-Version  | Supported
-------------- | -------------
-.Net6  | Yes
+| Version | Supported |
+|---------|-----------|
+| .Net6   | Yes       |
 
 # Supported features
 - Check if project has package reference
