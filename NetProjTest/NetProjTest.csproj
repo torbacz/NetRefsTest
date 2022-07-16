@@ -10,6 +10,7 @@
         <Authors>Marcin Torba</Authors>
         <AssemblyName>NetProjTest</AssemblyName>
         <RootNamespace>NetProjTest</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
