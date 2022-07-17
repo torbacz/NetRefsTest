@@ -9,7 +9,7 @@ public class ProjectSerializationTests
     public void Project_Should_SerializeSuccessfullyFromString()
     {
         var projectName = "testProject";
-        var project = Net60Project.FromXmlString(ProjectSamples.testProjectNet60_1, projectName);
+        var project = Net60Project.FromXmlString(ProjectSamples.testProjectNet60_WithPackageAndFile, projectName);
 
         project.ProjectName.Should().Be(projectName);
         project.Sdk.Should().Be("Microsoft.NET.Sdk");

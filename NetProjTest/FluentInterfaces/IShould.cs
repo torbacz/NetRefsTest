@@ -1,11 +1,14 @@
-﻿namespace NetProjTest.FluentInterfaces;
+﻿using NetProjTest.Models.Net60;
 
-public interface IShould
+namespace NetProjTest.FluentInterfaces;
+
+public interface IShould<out T>
 {
-    public IShouldNot Not();
+    public IShouldNot<T> Not();
     
-    public IProject ContainPackage(string packageName);
-    public IProject ContainPackage(string packageName, string version);
-    public IProject ContainFile(string fileName);
-    public IProject ContainFile(string fileName, string filePath);
+    public T ContainPackage(string packageName);
+    public T ContainPackage(string packageName, string version);
+    public T ContainFile(string fileName);
+    public T ContainFile(string fileName, string filePath);
+    public T TargetFramework(TargetFramework targetFramework);
 }

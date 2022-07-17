@@ -3,7 +3,7 @@ using File = System.IO.File;
 
 namespace NetProjTest;
 
-public class ProjectHelper
+public static class ProjectHelper
 {
     public static TargetFramework FindTargetFrameworkBasedOnFile(string filePath)
     {
