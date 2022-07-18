@@ -18,6 +18,5 @@ public interface IProject
         return new ProjectTester(projectModel);
     }
 
-    public IShould Should();
-
+    public IShould<IProject> Should();
 }
