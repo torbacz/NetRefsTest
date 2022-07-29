@@ -28,6 +28,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="TestSamples\Net60Simple.csproj">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="TestSamples\Net60WithPackageAndFile.csproj">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
