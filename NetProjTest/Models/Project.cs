@@ -74,8 +74,8 @@ public class Project
                 GetPackageVersionFromNetFrameworkProject(x.Include))).ToList(); //TODO: from packages 
         
         var files = new List<File>(); //TODO
-        var contentFiles = project.ItemGroups?.Where(x => x.Files != null)
-            .SelectMany(x => x.Files ?? throw new ArgumentNullException(nameof(x.Files)))
+        var contentFiles = project.ItemGroups?.Where(x => x.ContentFiles != null)
+            .SelectMany(x => x.ContentFiles ?? throw new ArgumentNullException(nameof(x.ContentFiles)))
             .Select(x => new File() { FilePath = x.Include, FileName = Path.GetFileName(x.Include) });
         
         files.AddRange(contentFiles);

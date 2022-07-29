@@ -8,6 +8,5 @@ public class ItemGroup
     public List<Reference> References { get; set; }
     
     [XmlElement("Content")]
-    //[XmlElement("None")]
-    public List<NetFrameworkFile> Files { get; set; } 
+    public List<NetFrameworkFile> ContentFiles { get; set; }
 }
