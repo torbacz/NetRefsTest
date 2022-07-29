@@ -1,17 +1,15 @@
-using NetProjTest.Models;
 using NetProjTest.Models.Net60;
 
-namespace NetProjTest.Unit.Tests;
+namespace NetProjTest.Unit.Tests.Net60;
 
-public class ProjectSerializationTests
+public class Net60ProjectTests
 {
     [Fact]
-    public void Project_Should_SerializeSuccessfullyFromString()
+    public void FromXmlString_Should_SerializeSuccessfully()
     {
-        var projectName = "testProject";
-        var project = Net60Project.FromXmlString(ProjectSamples.testProjectNet60_WithPackageAndFile, projectName);
+        var project = Net60Project.FromFile("TestSamples\\Net60WithPackageAndFile.csproj");
 
-        project.ProjectName.Should().Be(projectName);
+        project.ProjectName.Should().Be("Net60WithPackageAndFile");
         project.Sdk.Should().Be("Microsoft.NET.Sdk");
         project.ItemGroups.Count.Should().Be(2);
         project.PropertyGroups.Count.Should().Be(3);
@@ -69,15 +67,5 @@ public class ProjectSerializationTests
         project.ItemGroups[1].PackageReferences.Count.Should().Be(0);
         project.ItemGroups[1].AdditionalFiless[0].Include.Should().Be("..\\stylecop.json");
         project.ItemGroups[1].AdditionalFiless[0].Link.Should().Be("stylecop.json");
-    }
-
-    [Fact]
-    public void Project_Should_SerializeSuccessfullyFromFile()
-    {
-        const string path = "../../../NetProjTest.Unit.Tests.csproj";
-
-        var project = Net60Project.FromFile(path);
-
-        project.Should().NotBeNull();
     }
 }

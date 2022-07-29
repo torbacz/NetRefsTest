@@ -1,6 +1,6 @@
 namespace NetProjTest.Unit.Tests;
 
-public class IProjectsTests
+public class ProjectsTests
 {
     private const string SampleProjectNameFirst = "sampleProjectNet60First";
     private const string SampleProjectNameWithExtenstionFirst = $"{SampleProjectNameFirst}.csproj";
@@ -10,7 +10,7 @@ public class IProjectsTests
     private const string SampleProjectNameWithExtenstionSecond = $"{SampleProjectNameSecond}.csproj";
     private const string SampleProjectPathSecond = $"{SampleProjectNameWithExtenstionSecond}";
     
-    public IProjectsTests()
+    public ProjectsTests()
     {
         File.WriteAllText(SampleProjectPathFirst, ProjectSamples.testProjectNet60_Simple);
         File.WriteAllText(SampleProjectPathSecond, ProjectSamples.testProjectNet60_Simple);

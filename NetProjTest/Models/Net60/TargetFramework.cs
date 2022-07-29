@@ -2,5 +2,6 @@
 
 public enum TargetFramework
 {
-    Net60 = 0
+    Net60 = 0,
+    NetFramework = 1
 }
