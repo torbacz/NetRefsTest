@@ -18,6 +18,7 @@ internal class Project
     public TargetFramework TargetFramework { get; }
     public IReadOnlyList<Package> Packages { get; }
     public IReadOnlyList<File> Files { get; }
+    //TODO: Add references
 
     internal static Project FromNet60Project(Net60Project project)
     {
@@ -64,20 +65,19 @@ internal class Project
         if (string.IsNullOrEmpty(project.ProjectName)) 
             throw new ArgumentNullException(nameof(project.ProjectName));
 
-        //TODO: validate packages.config?
-
-        var packages = project.ItemGroups?.Where(x => x.References != null).SelectMany(x =>
+        /* References
+         * project.ItemGroups?.Where(x => x.References != null).SelectMany(x =>
                 x.References ?? throw new ArgumentNullException(nameof(x.References)))
             .Select(x => new Package(GetPackageNameFromNetFrameworkProject(x.Include),
                 GetPackageVersionFromNetFrameworkProject(x.Include))).ToList(); //TODO: from packages 
+         */
+
+        var packages = project.Packages.Select(x => new Package(x.Id, x.Version)).ToList(); 
         
-        var files = new List<File>(); //TODO
         var contentFiles = project.ItemGroups?.Where(x => x.ContentFiles != null)
             .SelectMany(x => x.ContentFiles ?? throw new ArgumentNullException(nameof(x.ContentFiles)))
-            .Select(x => new File() { FilePath = x.Include, FileName = Path.GetFileName(x.Include) });
-        
-        files.AddRange(contentFiles);
+            .Select(x => new File() { FilePath = x.Include, FileName = Path.GetFileName(x.Include) }).ToList();
 
-        return new Project(project.ProjectName, TargetFramework.NetFramework, packages, files);
+        return new Project(project.ProjectName, TargetFramework.NetFramework, packages, contentFiles);
     }
 }

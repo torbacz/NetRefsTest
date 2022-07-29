@@ -8,8 +8,8 @@ Inspired by Inspired by the [NetArchTest](https://github.com/BenMorris/NetArchTe
 | Version | Supported |
 |---------|-----------|
 | .Net6   | Yes       |
-| .netFramework   | ToDo       |
-| nanoFramework   | ToDo       |
+| .netFramework   | Yes       |
+| nanoFramework   | ToDo      |
 
 # Supported features
 - Check if project has package reference

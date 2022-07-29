@@ -2,8 +2,7 @@
 
 public abstract class BaseFromFileTest
 {
-    protected abstract string SampleProjectName { get; }
-    protected string SampleProjectPath => $"TestSamples\\{SampleProjectNameWithExtenstion}";
-    private string SampleProjectNameWithExtenstion => $"{SampleProjectName}.csproj";
+    protected string SampleProjectName => Path.GetFileNameWithoutExtension(SampleProjectPath);
+    protected abstract string SampleProjectPath { get; }
 
 }

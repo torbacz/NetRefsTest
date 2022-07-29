@@ -6,6 +6,6 @@ namespace NetProjTest.Unit.Tests.NetFramework;
 
 public class SingleProjectFluentApiTargetFrameworkNetFrameworkTests: SingleProjectFluentApiTargetFrameworkTests
 {
-    protected override string SampleProjectName => "NetFrameworkWithPackageAndFile";
+    protected override string SampleProjectPath => "TestSamples\\NetFrameworkWithPackageAndFile\\NetFrameworkWithPackageAndFile.csproj";
     public override TargetFramework TargetFramework => TargetFramework.NetFramework;
 }

@@ -6,6 +6,6 @@ namespace NetProjTest.Unit.Tests.Net60;
 
 public class SingleProjectFluentApiTargetFrameworkNet60Tests : SingleProjectFluentApiTargetFrameworkTests
 {
-    protected override string SampleProjectName => "Net60WithPackageAndFile";
+    protected override string SampleProjectPath => "TestSamples\\Net60WithPackageAndFile.csproj";
     public override TargetFramework TargetFramework => TargetFramework.Net60;
 }
