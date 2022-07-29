@@ -1,3 +1,4 @@
+using NetProjTest.Models;
 using NetProjTest.Models.Net60;
 
 namespace NetProjTest.Unit.Tests.Net60;

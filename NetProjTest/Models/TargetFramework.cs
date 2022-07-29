@@ -1,4 +1,4 @@
-﻿namespace NetProjTest.Models.Net60;
+﻿namespace NetProjTest.Models;
 
 public enum TargetFramework
 {

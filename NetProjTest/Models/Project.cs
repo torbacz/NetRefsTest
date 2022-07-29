@@ -1,12 +1,10 @@
-﻿using System.Collections.Immutable;
-using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using NetProjTest.Models.Net60;
 using NetProjTest.Models.NetFramework;
 
 namespace NetProjTest.Models;
 
-public class Project
+internal class Project
 {
     private Project(string projectName, TargetFramework targetFramework, IReadOnlyList<Package> packages, IReadOnlyList<File> files)
     {

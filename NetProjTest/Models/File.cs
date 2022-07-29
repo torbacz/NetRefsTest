@@ -1,6 +1,6 @@
 ﻿namespace NetProjTest.Models;
 
-public class File
+internal class File
 {
     public string? FileName { get; init; }
     public string? FilePath { get; init; }

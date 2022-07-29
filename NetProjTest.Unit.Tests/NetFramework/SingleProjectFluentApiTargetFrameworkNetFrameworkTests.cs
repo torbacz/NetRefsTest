@@ -1,4 +1,5 @@
-﻿using NetProjTest.Models.Net60;
+﻿using NetProjTest.Models;
+using NetProjTest.Models.Net60;
 using NetProjTest.Unit.Tests.BaseTests;
 
 namespace NetProjTest.Unit.Tests.NetFramework;

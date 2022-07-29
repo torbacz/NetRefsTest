@@ -1,6 +1,7 @@
 ﻿using NetProjTest.Exceptions;
 using Moq;
 using NetProjTest.FluentInterfaces;
+using NetProjTest.Models;
 using NetProjTest.Models.Net60;
 
 namespace NetProjTest.Unit.Tests;

@@ -1,4 +1,5 @@
 ﻿using NetProjTest.Exceptions;
+using NetProjTest.Models;
 using NetProjTest.Models.Net60;
 
 namespace NetProjTest.Unit.Tests.BaseTests;
