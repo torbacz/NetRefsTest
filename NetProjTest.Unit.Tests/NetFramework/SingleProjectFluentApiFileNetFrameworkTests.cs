@@ -4,7 +4,7 @@ namespace NetProjTest.Unit.Tests.NetFramework;
 
 public class SingleProjectFluentApiFileNetFrameworkTests : SingleProjectFluentApiFromFilesTests
 {
-    protected override string SampleProjectPath => "TestSamples\\NetFrameworkWithPackageAndFile\\NetFrameworkWithPackageAndFile.csproj";
+    protected override string SampleProjectPath => "TestSamples//NetFrameworkWithPackageAndFile//NetFrameworkWithPackageAndFile.csproj";
     protected override string ExistingFileName => "test.txt";
     protected override string NoExistingFileName => "test1.txt";
     protected override string ExistingFilePath => "Test\\test.txt";
