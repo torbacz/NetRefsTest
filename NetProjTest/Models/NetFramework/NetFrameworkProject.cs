@@ -53,7 +53,7 @@ public class NetFrameworkProject
     {
         var projectXml = System.IO.File.ReadAllText(filePath);
         var projectName = Path.GetFileNameWithoutExtension(filePath);
-        var packagesPath = $"{Path.GetDirectoryName(filePath)}\\{PackagesFileName}";
+        var packagesPath = $"{Path.GetDirectoryName(filePath)}//{PackagesFileName}";
         var packagesContent = System.IO.File.Exists(packagesPath)
             ? System.IO.File.ReadAllText(packagesPath)
             : string.Empty;
