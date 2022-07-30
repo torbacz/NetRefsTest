@@ -1,4 +1,5 @@
 ﻿using NetProjTest.FluentInterfaces;
+using NetProjTest.Models;
 using NetProjTest.Models.Net60;
 
 namespace NetProjTest;

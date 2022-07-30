@@ -1,5 +1,6 @@
 ﻿using NetProjTest.Exceptions;
 using NetProjTest.FluentInterfaces;
+using NetProjTest.Models;
 using NetProjTest.Models.Net60;
 using Project = NetProjTest.Models.Project;
 

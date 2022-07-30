@@ -1,6 +1,6 @@
 ﻿namespace NetProjTest.Models;
 
-public class Package
+internal class Package
 {
     public string PackageName { get; }
     public string Version { get; }

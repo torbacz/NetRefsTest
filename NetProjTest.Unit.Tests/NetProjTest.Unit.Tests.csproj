@@ -26,4 +26,19 @@
     <ItemGroup>
       <ProjectReference Include="..\NetProjTest\NetProjTest.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="TestSamples\Net60Simple.csproj">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="TestSamples\Net60WithPackageAndFile.csproj">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="TestSamples\NetFrameworkWithPackageAndFile\NetFrameworkWithPackageAndFile.csproj">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="TestSamples\NetFrameworkWithPackageAndFile\packages.config">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
 </Project>
