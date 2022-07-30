@@ -8,7 +8,7 @@ public class Net60ProjectTests
     [Fact]
     public void FromXmlString_Should_SerializeSuccessfully()
     {
-        var project = Net60Project.FromFile("TestSamples//Net60WithPackageAndFile.csproj");
+        var project = Net60Project.FromFile("TestSamples/Net60WithPackageAndFile.csproj");
 
         project.ProjectName.Should().Be("Net60WithPackageAndFile");
         project.Sdk.Should().Be("Microsoft.NET.Sdk");

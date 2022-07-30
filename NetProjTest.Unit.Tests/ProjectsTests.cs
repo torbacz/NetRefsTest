@@ -2,7 +2,7 @@ namespace NetProjTest.Unit.Tests;
 
 public class ProjectsTests
 {
-    private static string SearchPath => $"{Environment.CurrentDirectory}//TestSamples";
+    private static string SearchPath => $"{Environment.CurrentDirectory}/TestSamples";
         
     [Fact]
     public void SearchFiles_Should_ReturnAllFiles()

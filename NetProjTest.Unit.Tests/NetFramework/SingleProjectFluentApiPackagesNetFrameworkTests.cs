@@ -4,7 +4,7 @@ namespace NetProjTest.Unit.Tests.NetFramework;
 
 public class SingleProjectFluentApiPackagesNetFrameworkTests : SingleProjectFluentApiPackagesTests
 {
-    protected override string SampleProjectPath => "TestSamples//NetFrameworkWithPackageAndFile//NetFrameworkWithPackageAndFile.csproj";
+    protected override string SampleProjectPath => "TestSamples/NetFrameworkWithPackageAndFile/NetFrameworkWithPackageAndFile.csproj";
     protected override string ExistingPackage => "StyleCop.Analyzers";
     protected override string ExistingPackageVersion => "1.1.118";
     protected override string NoExistingPackage => "StyleCop.Analyzers1";
