@@ -37,11 +37,8 @@
       <Content Include="TestSamples\NetFrameworkWithPackageAndFile\NetFrameworkWithPackageAndFile.csproj">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Update="TestSamples\NetFrameworkWithPackageAndFile\packages.config">
+      <Content Include="TestSamples\NetFrameworkWithPackageAndFile\packages.config">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+      </Content>
     </ItemGroup>
 </Project>
