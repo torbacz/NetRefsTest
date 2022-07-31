@@ -28,6 +28,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="TestSamples\NanoFrameworkWIthPackageAndFile\NanoFrameworkWIthPackageAndFile.nfproj">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="TestSamples\Net60Simple.csproj">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
@@ -38,6 +41,10 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Include="TestSamples\NetFrameworkWithPackageAndFile\packages.config">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="TestSamples\NanoFrameworkWIthPackageAndFile\packages.config" />
+      <Content Include="TestSamples\NanoFrameworkWIthPackageAndFile\packages.config">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

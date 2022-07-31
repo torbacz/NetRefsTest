@@ -1,5 +1,5 @@
 # NetRefsTest
-A fluent API for unit testing all sorts of .Net project. 
+A fluent API for unit testing all sorts of .Net project files. 
 
 Inspired by Inspired by the [NetArchTest](https://github.com/BenMorris/NetArchTest) and [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
 
@@ -9,7 +9,7 @@ Inspired by Inspired by the [NetArchTest](https://github.com/BenMorris/NetArchTe
 |---------|-----------|
 | .Net6   | Yes       |
 | .netFramework   | Yes       |
-| nanoFramework   | ToDo      |
+| nanoFramework   | Yes       |
 
 # Supported features
 - Check if project has package reference

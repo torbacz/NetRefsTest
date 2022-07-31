@@ -57,7 +57,7 @@ internal class Project
         return regex.Matches(input)[1].Value.Replace("Version=", "").Trim();
     }
     
-    internal static Project FromNetFrameworkProject(NetFrameworkProject project)
+    internal static Project FromNetFrameworkProject(NetFrameworkProject project, TargetFramework framework)
     {
         if (project == null) 
             throw new ArgumentNullException(nameof(project));
@@ -78,6 +78,6 @@ internal class Project
             .SelectMany(x => x.ContentFiles ?? throw new ArgumentNullException(nameof(x.ContentFiles)))
             .Select(x => new File() { FilePath = x.Include, FileName = Path.GetFileName(x.Include) }).ToList();
 
-        return new Project(project.ProjectName, TargetFramework.NetFramework, packages, contentFiles);
+        return new Project(project.ProjectName, framework, packages, contentFiles);
     }
 }
