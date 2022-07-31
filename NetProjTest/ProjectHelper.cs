@@ -17,6 +17,9 @@ public static class ProjectHelper
         var fileContent = File.ReadAllText(filePath);
         var fileExtenstion = Path.GetExtension(filePath);
 
+        if (IsNanoFrameworkProject(fileExtenstion))
+            return TargetFramework.NanoFramework;
+        
         if (IsNet60Project(fileContent, fileExtenstion))
             return TargetFramework.Net60;
 
@@ -24,6 +27,14 @@ public static class ProjectHelper
             return TargetFramework.NetFramework;
 
         throw new NotSupportedException($"Requested project is not supported");
+    }
+
+    private static bool IsNanoFrameworkProject(string fileExtenstion)
+    {
+        if (fileExtenstion == ".nfproj")
+            return true;
+
+        return false;
     }
 
     private static bool IsNetFrameworkProject(string fileContent, string fileExtenstion)

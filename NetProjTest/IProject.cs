@@ -13,7 +13,8 @@ public interface IProject
         var projectModel = frameworkVersion switch
         {
             TargetFramework.Net60 => Project.FromNet60Project(Net60Project.FromFile(filePath)),
-            TargetFramework.NetFramework => Project.FromNetFrameworkProject(NetFrameworkProject.FromFile(filePath)),
+            TargetFramework.NetFramework => Project.FromNetFrameworkProject(NetFrameworkProject.FromFile(filePath), TargetFramework.NetFramework),
+            TargetFramework.NanoFramework => Project.FromNetFrameworkProject(NetFrameworkProject.FromFile(filePath), TargetFramework.NanoFramework),
             _ => throw new ArgumentOutOfRangeException($"")
         };
 
