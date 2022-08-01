@@ -14,3 +14,19 @@ Inspired by Inspired by the [NetArchTest](https://github.com/BenMorris/NetArchTe
 # Supported features
 - Check if project has package reference
 - Check if project has additional file included
+
+# Code samples
+## Validate the project file to see if it contains the package
+```c#
+var project = IProject.FromFile(ProjectPath);
+project.Should().ContainPackage(PackageName);
+project.Should().ContainPackage(PackageName, PackageVersion)
+```
+
+## Validate the projects in directory to see if it contains the package
+```c#
+var allFiles = IProjects.SearchFiles(SearchPath, "*.csproj", SearchOption.AllDirectories);
+var projects = IProjects.FromFiles(allFiles);
+projects.Should().ContainPackage(PackageName);
+projects.Should().ContainPackage(PackageName, PackageVersion)
+```

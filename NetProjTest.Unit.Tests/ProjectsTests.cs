@@ -25,8 +25,7 @@ public class ProjectsTests
     [Fact]
     public void FromFiles_Should_ReturnValidData()
     {
-        var allFiles = IProjects.SearchFiles(SearchPath, "*.csproj", SearchOption.AllDirectories)
-            .ToArray();
+        var allFiles = IProjects.SearchFiles(SearchPath, "*.csproj", SearchOption.AllDirectories);
 
         if (IProjects.FromFiles(allFiles) is not ProjectsTester projects)
             throw new InvalidCastException($"Returned type must be of type {typeof(ProjectsTester)}");

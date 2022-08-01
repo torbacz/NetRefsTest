@@ -69,7 +69,7 @@ internal class Project
          * project.ItemGroups?.Where(x => x.References != null).SelectMany(x =>
                 x.References ?? throw new ArgumentNullException(nameof(x.References)))
             .Select(x => new Package(GetPackageNameFromNetFrameworkProject(x.Include),
-                GetPackageVersionFromNetFrameworkProject(x.Include))).ToList(); //TODO: from packages 
+                GetPackageVersionFromNetFrameworkProject(x.Include))).ToList();
          */
 
         var packages = project.Packages.Select(x => new Package(x.Id, x.Version)).ToList(); 
